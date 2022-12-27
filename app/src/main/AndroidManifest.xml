@@ -10,8 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.APPMARTE"
         tools:targetApi="31">
+=======
+        android:theme="@style/Theme.APPMARTE">
+
+>>>>>>> ec75243 (Falta Completar El adapter e implementarlo en la Vista)
         <activity
             android:name=".UI.MainActivity"
             android:exported="true"
