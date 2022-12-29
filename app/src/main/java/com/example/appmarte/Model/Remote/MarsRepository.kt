@@ -60,6 +60,11 @@ class MarsRepository {
         }
     }
 
+
+    fun getTerrainByID( id: String) : LiveData<MarsRealState>{
+        return getTerrainByID(id)
+    }
+
 }
 
 

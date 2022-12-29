@@ -16,6 +16,12 @@ class AdapterMars  : RecyclerView.Adapter<AdapterMars.MarsVH>() {
 
 
     private var listMarsItem = listOf<MarsRealState>()
+
+
+
+
+
+    // Para seleccinar tenemos una variables que tiene un listado de nuestra clase
     val selectedTerrain = MutableLiveData<MarsRealState>()
 
     // Funcion  para seleccionar
@@ -29,7 +35,6 @@ class AdapterMars  : RecyclerView.Adapter<AdapterMars.MarsVH>() {
 
 
     //1 INNER CLASS
-
     inner class MarsVH(private val binding: MarsItemBinding) :
         RecyclerView.ViewHolder(binding.root),
         View.OnClickListener {
@@ -39,8 +44,8 @@ class AdapterMars  : RecyclerView.Adapter<AdapterMars.MarsVH>() {
             // Activar el Clik
             itemView.setOnClickListener(this)
         }
-
         override fun onClick(v: View?) {
+            // para seleccionar
             selectedTerrain.value = listMarsItem[adapterPosition]
         }
 

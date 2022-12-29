@@ -59,7 +59,14 @@ class FirstFragment : Fragment() {
         _binding.rvTerrains.adapter = adapter
         _binding.rvTerrains.layoutManager= GridLayoutManager(context,2)
 
+   adapter.selectedItem().observe(viewLifecycleOwner, Observer {
+       it.let{
 
+           viewModel.selected(it)
+           findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+       }
+
+   })
         viewModel.liveDatafromInternet.observe(viewLifecycleOwner, Observer {
             it?.let{
             adapter.update(it)

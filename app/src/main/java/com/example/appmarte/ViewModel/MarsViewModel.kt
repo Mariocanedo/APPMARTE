@@ -1,6 +1,7 @@
 package com.example.appmarte.ViewModel
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.appmarte.Model.Remote.MarsRealState
@@ -32,7 +33,18 @@ class MarsViewModel :ViewModel(){
         liveDatafromInternet = repository.dataFromInternet
 
     }
-    //////////////////////////////////////////////////////////
+
+// funcion para selecccionar
+    // guardarmos la selecciona en una mutableLiveData
+    private var selectedMarsTerrain: MutableLiveData<MarsRealState> = MutableLiveData()
+
+    // Ocupamos una función  y tomamos la posiciona seleccionada
+    fun selected(mars :MarsRealState){
+        selectedMarsTerrain.value = mars
+    }
+
+    fun selectedItem(): LiveData<MarsRealState> = selectedMarsTerrain
+
 
 
 
