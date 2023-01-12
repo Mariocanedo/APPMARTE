@@ -67,14 +67,24 @@ class FirstFragment : Fragment() {
        }
 
    })
-        viewModel.liveDatafromInternet.observe(viewLifecycleOwner, Observer {
+      /*  viewModel.liveDatafromInternet.observe(viewLifecycleOwner, Observer {
             it?.let{
             adapter.update(it)
-            Log.d("Listado",it.toString())
+           // Log.d("Listado",it.toString())
 
 
             }
+        })*/
+
+
+
+        viewModel.allTask.observe(viewLifecycleOwner, Observer {
+
+            adapter.update(it)
+            Log.d("Listado",it.toString())
         })
+
+
 
 
 
